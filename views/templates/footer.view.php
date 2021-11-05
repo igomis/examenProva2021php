@@ -21,7 +21,7 @@
     <section>
         <h2>Last Missage</h2>
         <p>
-
+            <?= $lastMessage ?>
         </p>
     </section>
     <ul class="copyright">

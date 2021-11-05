@@ -48,7 +48,7 @@ class Album
     }
 
     public static function Best(){
-        // retorna un array amb tots el albums
+        // retorna un array amb el albums mes valorats
     }
 
 
