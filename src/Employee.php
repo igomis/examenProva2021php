@@ -83,7 +83,7 @@ class Employee
     /**
      * @return string
      */
-    public function getTitle():String
+    public function getTitle():Mixed
     {
        // retorna el title actual del empleat
     }
@@ -91,7 +91,7 @@ class Employee
     /**
      * @return string
      */
-    public function getDepartment():String
+    public function getDepartment():Mixed
     {
         // retorna el nom del departament actual de l'empleat
     }
@@ -99,7 +99,7 @@ class Employee
     /**
      * @return boolean
      */
-    public function isManager():Boolean
+    public function isManager():bool
     {
         // retorna si és manager de departament
     }
@@ -107,15 +107,20 @@ class Employee
     public static function Members(String $dep):Array
     {
         // retorna un array de empleats on estan tots el membres actuals del departament
-        // el manager de departament el primer
-        // la resta ordenats per antiguetat en el departament
-        return [];
+        // ordenats per antiguetat en el departament
+        $allMembers = [];
+        $query = require('../bootstrap.php');
+        foreach ($query->selectWhereOrder('dept_emp','dept_no',$dep,'from_date') as $empleat){
+            $e = $query->find('employees','emp_no',$empleat->emp_no);
+            $allMembers[] = new Employee($e->emp_no,$e->birth_date,$e->first_name,$e->last_name,$e->gender,$e->hire_date);
+        }
+        return $allMembers;
     }
 
     public static function Managers():Array
     {
         // retorna un array de empleats on estan tots els que tenen titol Manager i estiguen actius
-        // ordenats per antiguetat en la empresa
+        // ordenats per antiguetat
         return [];
     }
 

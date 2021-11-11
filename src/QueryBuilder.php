@@ -47,6 +47,21 @@ class QueryBuilder
         return $stpdo->fetchAll(\PDO::FETCH_OBJ);
     }
 
+    public function selectWhereLast($table,$field,$value,$order){
+        $stpdo = $this->conn->prepare("SELECT * FROM {$table} WHERE `$field` = :value ORDER BY {$order} DESC LIMIT 1");
+        $stpdo->bindParam(":value",$value);
+        $this->execute($stpdo);
+        return $stpdo->fetch(\PDO::FETCH_OBJ);
+    }
+
+    public function selectWhereOrder($table,$key,$value,$order){
+        $stpdo = $this->conn->prepare("SELECT * FROM {$table} WHERE `$key` = :value ORDER BY $order");
+        $stpdo->bindParam(":value",$value);
+        $this->execute($stpdo);
+
+        return $stpdo->fetchAll(\PDO::FETCH_OBJ);
+    }
+
     public function insert($table,$parametres){
         $stpdo = $this->conn->prepare(insert($table,$parametres));
         foreach ($parametres as $key => $value){
