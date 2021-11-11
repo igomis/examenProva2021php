@@ -5,7 +5,7 @@
     </header>
     <section class="tiles">
         <?php foreach ($employees as $employee){
-            loadTemplate('templates.employees',$employee);
+            loadTemplate('templates.employees',compact('employee'));
         }
         ?>
     </section>

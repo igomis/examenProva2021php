@@ -106,8 +106,6 @@ class Employee
 
     public static function Members(String $dep):Array
     {
-        // retorna un array de empleats on estan tots el membres actuals del departament
-        // ordenats per antiguetat en el departament
         $allMembers = [];
         $query = require('../bootstrap.php');
         foreach ($query->selectWhereOrder('dept_emp','dept_no',$dep,'from_date') as $empleat){
@@ -121,7 +119,12 @@ class Employee
     {
         // retorna un array de empleats on estan tots els que tenen titol Manager i estiguen actius
         // ordenats per antiguetat
-        return [];
+        $query = require('../bootstrap.php');
+        $managers = [];
+        foreach ($query->selectAll('employees',12) as $e){
+            $managers[] = new Employee($e['emp_no'],$e['birth_date'],$e['first_name'],$e['last_name'],$e['gender'],$e['hire_date']);
+        }
+        return $managers;
     }
 
 

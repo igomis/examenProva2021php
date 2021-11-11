@@ -53,7 +53,6 @@ class QueryBuilder
         $this->execute($stpdo);
         return $stpdo->fetch(\PDO::FETCH_OBJ);
     }
-
     public function selectWhereOrder($table,$key,$value,$order){
         $stpdo = $this->conn->prepare("SELECT * FROM {$table} WHERE `$key` = :value ORDER BY $order");
         $stpdo->bindParam(":value",$value);
