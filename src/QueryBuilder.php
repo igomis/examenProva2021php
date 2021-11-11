@@ -30,12 +30,8 @@ class QueryBuilder
         return $stpdo->fetchAll(\PDO::FETCH_ASSOC);
     }
 
-    public function findById($table,$id){
-        $stpdo = $this->conn->prepare("SELECT * FROM {$table} WHERE `id` = :id ");
-        $stpdo->bindParam(":id",$id);
-        $this->execute($stpdo);
-
-        return $stpdo->fetch(\PDO::FETCH_OBJ);
+    public function find($table,$primaryKey,$id){
+        // retorna l'objecte de la base de dades buscat
     }
 
     public function deleteById($table,$primaryKey,$id){
@@ -76,10 +72,6 @@ class QueryBuilder
             echo ('Error amb la base de dades: '.$exception->getMessage());
             die();
         }
-    }
-
-    public function last($table){
-        // Torna el ultim element d'una taula
     }
 
 }

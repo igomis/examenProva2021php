@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>BEST MUSIC EVER</title>
+        <title>BOOBLE D.C</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="/assets/css/main.css" />
@@ -12,19 +12,19 @@
 			<div id="wrapper">
 				<!-- Header -->
 					<header id="header">
-                        <?php loadTemplate('templates/header'); ?>
+                        <?php loadTemplate('templates.header'); ?>
 					</header>
 				<!-- Menu -->
 					<nav id="menu">
-                        <?php loadTemplate('templates/menu',compact('menu')); ?>
+                        <?php loadTemplate('templates.menu'); ?>
 					</nav>
 				<!-- Main -->
 					<div id="main">
-                        <?php loadTemplate('templates/main',compact('albums')); ?>
+                        <?php loadTemplate('templates.main',compact('employees')); ?>
 					</div>
 				<!-- Footer -->
 					<footer id="footer">
-                        <?php loadTemplate('templates/footer',compact('lastMessage')); ?>
+                        <?php loadTemplate('templates/footer'); ?>
 					</footer>
 			</div>
 		<!-- Scripts -->

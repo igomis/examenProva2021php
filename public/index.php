@@ -1,11 +1,9 @@
 <?php
-    use App\Album;
+    use App\Employee;
 
     require('../kernel.php');
     $query = require('../bootstrap.php');
-    $menu = require('../config/menu.php');
-    $albums = Album::Best();
-    $lastMessage = $query->last('users')->message??'';
 
+    $employees = Employee::Managers();
 
-    loadView('index',compact('menu','albums','lastMessage'));
+    loadView('index',compact('employees'));

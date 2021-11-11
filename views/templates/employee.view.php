@@ -3,9 +3,9 @@
         <img src="images/pic01.jpg" alt="" />
     </span>
     <a href="votes.php">
-        <h2>Nom Album</h2>
+        <h2>Nom empleat</h2>
         <div class="content">
-            <p>Grup Album<br/>Discografica</p>
+            <p>Departament<br/>Title</p>
         </div>
     </a>
 </article>

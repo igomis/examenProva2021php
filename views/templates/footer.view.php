@@ -1,16 +1,13 @@
 <div class="inner">
     <section>
-        <h2>Identify for vote</h2>
+        <h2>Login</h2>
         <form method="post" action="index.php">
             <div class="fields">
                 <div class="field half">
-                    <input type="text" name="name" id="name" placeholder="Name" />
+                    <input type="text" name="emp_no" id="emp_no" placeholder="Numero Empleat" />
                 </div>
                 <div class="field half">
-                    <input type="email" name="email" id="email" placeholder="Email" />
-                </div>
-                <div class="field">
-                    <textarea name="message" id="message" placeholder="Message"></textarea>
+                    <input type="password" name="pass" id="pass" placeholder="Password" />
                 </div>
             </div>
             <ul class="actions">
@@ -19,10 +16,7 @@
         </form>
     </section>
     <section>
-        <h2>Last Missage</h2>
-        <p>
-            <?= $lastMessage ?>
-        </p>
+        <h2>Vots Actuals</h2>
     </section>
     <ul class="copyright">
         <li>&copy; Untitled. All rights reserved</li>
